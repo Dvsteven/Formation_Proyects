@@ -1,0 +1,23 @@
+/* Estilos para enlaces de modificar y eliminar en la tabla de read.php */
+table a {
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+table a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el botón de eliminar */
+table a.delete-btn {
+    background-color: #dc3545;
+}
+
+table a.delete-btn:hover {
+    background-color: #c82333;
+}
