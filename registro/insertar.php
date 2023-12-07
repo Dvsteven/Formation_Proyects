@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['password'];
 
     // Prepara la consulta SQL para insertar los datos en la tabla "users"
-    $sql = "INSERT INTO usuarios (tdocumento, documento, nombre, apellido, correo, username, contrasena)
+    $sql = "INSERT INTO usuarioss (tdocumento, documento, nombre, apellido, correo, username, contrasena)
             VALUES ('$tdocumento','$documento','$nombre', '$apellido', '$correo', '$usuario', '$contrasena')";
 
     // Ejecuta la consulta SQL

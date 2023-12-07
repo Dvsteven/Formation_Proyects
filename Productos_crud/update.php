@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST['descripcion'];
 
     // Preparar la consulta SQL de actualización
-    $sql = "UPDATE productos SET 
+    $sql = "UPDATE productoss SET 
             nombre='$nombre', 
             cantidad=$cantidad, 
             tipo='$tipo', 
@@ -61,7 +61,7 @@ if ($conn->connect_error) {
 }
 
 // Obtener los datos del producto para prellenar el formulario
-$sql = "SELECT * FROM productos WHERE id=$id";
+$sql = "SELECT * FROM productoss WHERE id=$id";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 

@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta SQL para obtener todos los productos
-$sql = "SELECT id, nombre, cantidad, tipo, precio, descuento, descripcion FROM productos";
+$sql = "SELECT id, nombre, cantidad, tipo, precio, descuento, descripcion FROM productoss";
 $result = $conn->query($sql);
 
 // Mostrar tabla de productos

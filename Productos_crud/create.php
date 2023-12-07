@@ -15,17 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Obtener datos del formulario
+    $codigo = $_POST['id'];
     $nombre = $_POST['nombre'];
     $cantidad = $_POST['cantidad'];
+    $proveedor = $_POST['proveedor'];
     $tipo = $_POST['tipo'];
     $precio = $_POST['precio'];
     $descuento = $_POST['descuento'];
     $descripcion = $_POST['descripcion'];
 
     // Preparar la consulta SQL de inserción
-    $sql = "INSERT INTO productos (nombre, cantidad, tipo, precio, descuento, descripcion)
-            VALUES ('$nombre', $cantidad, '$tipo', $precio, $descuento, '$descripcion')";
-
+    $sql = "INSERT INTO productoss (id, nombre, cantidad, proveedor, tipo, precio, descuento, descripcion)
+            VALUES ('$codigo','$nombre', '$cantidad', '$proveedor', '$tipo', $precio, $descuento, '$descripcion')";
+    
     // Ejecutar la consulta
     if ($conn->query($sql) === TRUE) {
         // Registro exitoso
@@ -53,10 +55,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <link rel="stylesheet" href="css/crud.css">
 <form action="create.php" method="post">
     <h2>Agregar Producto</h2>
-    <label for="nombre">Nombre:</label>
+    <label for="id">Codigo Producto:</label>
+    <input type="number" name="id" required>
+    <label for="nombre">Nombre Producto:</label>
     <input type="text" name="nombre" required>
     <label for="cantidad">Cantidad:</label>
     <input type="number" name="cantidad" required>
+    <label for="proveedor">Proveedor:</label>
+    <input type="text" name="proveedor" required>
     <label for="tipo">Tipo:</label>
     <input type="text" name="tipo">
     <label for="precio">Precio:</label>
