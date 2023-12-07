@@ -27,9 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Preparar la consulta SQL de inserción
     $sql = "INSERT INTO productoss (id, nombre, cantidad, proveedor, tipo, precio, descuento, descripcion)
             VALUES ('$codigo','$nombre', '$cantidad', '$proveedor', '$tipo', $precio, $descuento, '$descripcion')";
-    
+
+    $sqlIngreso = "INSERT INTO movimientos (id_producto, cantidad, tipo_movimiento) VALUES ($codigo, $cantidad, 'ingreso')";
+    $resultIngreso = $conn->query($sqlIngreso);
+
     // Ejecutar la consulta
-    if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql, $resultIngreso) === TRUE) {
         // Registro exitoso
         $response = array('success' => true, 'message' => 'Producto agregado con éxito.');
 

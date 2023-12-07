@@ -55,6 +55,9 @@
 
                 $insertSql = "INSERT INTO ventas (id_producto, cantidad_vendida, precio_unitario, descuento_aplicado, total_venta) VALUES ($id, $cantidadVenta, $precio, $descuentoAplicado, $totalVenta)";
                 $conn->query($insertSql);
+
+                $sqlVenta = "INSERT INTO movimientos (id_producto, cantidad, tipo_movimiento) VALUES ($id, $cantidadVenta, 'venta')";
+                $resultVenta = $conn->query($sqlVenta);
                 
                 // Verificar el stock antes de realizar la venta
                 if ($cantidadVenta <= $stockDisponible) {

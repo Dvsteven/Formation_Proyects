@@ -19,9 +19,13 @@
 
         // Preparar la consulta SQL de eliminación
         $sql = "DELETE FROM productoss WHERE id=$id";
+        
+
+        $sqldelete = "INSERT INTO movimientos (id_producto, tipo_movimiento) VALUES ('$id','eliminado')";
+        $resultdelete = $conn->query($sqldelete);
 
         // Ejecutar la consulta
-        if ($conn->query($sql) === TRUE) {
+        if ($conn->query($sql, $resultdelete) === TRUE) {
             //Eliminacion exitosa
             $response = array('Producto eliminado con exito.');
 

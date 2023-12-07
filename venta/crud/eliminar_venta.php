@@ -72,7 +72,7 @@ $conn->close();
         <button type="submit">Confirmar Eliminación</button>
     </form>
 
-    <a href="gestion_ventas.php" class="back-link">Regresar</a>
+    <a href="../gestion_ventas.php" class="back-link">Regresar</a>
 
 </body>
 </html>

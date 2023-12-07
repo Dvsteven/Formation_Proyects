@@ -13,6 +13,9 @@
 
         <!-- Formulario para agregar productos al inventario -->
         <form action="agregar_producto.php" method="post">
+            <label for="codigo">Codigo:</label>
+            <input type="number" name="codigo" required>
+
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" required>
 
